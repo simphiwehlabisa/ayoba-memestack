@@ -35,7 +35,10 @@ function SearchResult(props) {
     <SearchResultContainer>
       {props.memes.map((meme, index) => {
         return (
-          <MemeImageContainer key={index}>
+          <MemeImageContainer
+            onClick={props.sendMeme(meme.images.fixed_height.url)}
+            key={index}
+          >
             <MemeImage
               key={index}
               src={meme.images.fixed_height.url}

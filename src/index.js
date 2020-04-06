@@ -7,6 +7,7 @@ import axios from "axios";
 import SearchResult from "./SearchResult";
 import "./global.css";
 import "typeface-roboto";
+import Ayoba from "./microapp.js";
 
 class App extends Component {
   constructor() {
@@ -32,6 +33,12 @@ class App extends Component {
       });
   };
 
+  sendMeme = (url) => {
+    // Ayoba.sendMedia(url, "image/gif");
+    // Ayoba.finish();
+    console.log(url);
+  };
+
   searchMeme = (event, query) => {
     query = event.target.value;
     if (event.key === "Enter") {
@@ -48,7 +55,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <SearchBar searchMeme={this.searchMeme}></SearchBar>
-        <SearchResult memes={this.state.memes}></SearchResult>
+        <SearchResult
+          memes={this.state.memes}
+          sendMeme={this.sendMeme}
+        ></SearchResult>
       </React.Fragment>
     );
   }
