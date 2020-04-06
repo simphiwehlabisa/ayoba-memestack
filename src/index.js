@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      gifs: [],
+      memes: [],
     };
   }
 
@@ -23,16 +23,16 @@ class App extends Component {
       )
       .then((response) => {
         this.setState({
-          gifs: response.data.data,
+          memes: response.data.data,
         });
-        console.log(this.state.gifs);
+        console.log(this.state.memes);
       })
       .catch((error) => {
         console.log("Error", error);
       });
   };
 
-  searchGif = (event, query) => {
+  searchMeme = (event, query) => {
     query = event.target.value;
     if (event.key === "Enter") {
       event.preventDefault();
@@ -46,10 +46,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <SearchBar searchGif={this.searchGif} />
-        <SearchResult gifs={this.state.gifs} />
-      </div>
+      <React.Fragment>
+        <SearchBar searchMeme={this.searchMeme}></SearchBar>
+        <SearchResult memes={this.state.memes}></SearchResult>
+      </React.Fragment>
     );
   }
 }

@@ -21,7 +21,7 @@ const SearchBar = (props) => {
     <SearchBarContainer>
       <InputStyle
         type="text"
-        onKeyDown={props.searchGif}
+        onKeyDown={props.searchMeme}
         placeholder={"Search memestack"}
       ></InputStyle>
     </SearchBarContainer>

@@ -30,15 +30,15 @@ const MemeImage = styled.img`
   height: 300px;
 `;
 
-const SearchResult = (props) => {
+function SearchResult(props) {
   return (
     <SearchResultContainer>
-      {props.gifs.map((gif, index) => {
+      {props.memes.map((meme, index) => {
         return (
           <MemeImageContainer key={index}>
             <MemeImage
               key={index}
-              src={gif.images.fixed_height.url}
+              src={meme.images.fixed_height.url}
               alt={index}
             ></MemeImage>
           </MemeImageContainer>
@@ -46,6 +46,6 @@ const SearchResult = (props) => {
       })}
     </SearchResultContainer>
   );
-};
+}
 
 export default SearchResult;
