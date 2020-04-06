@@ -12,21 +12,7 @@ const MemeImageContainer = styled.div`
   width: 30vw;
 `;
 
-// const SearchResult = (props) => (
-//   <div className="images">
-//     {props.gifs.map((gif, index) => {
-//       return (
-//         <div key={index} className="image-div">
-//           <img key={index} src={gif.images.fixed_height.url} alt={index} />
-//         </div>
-//       );
-//     })}
-//   </div>
-// );
-
-// export default SearchResult;
-
-export function SearchResult(props) {
+const SearchResult = (props) => {
   return (
     <SearchResultContainer>
       {props.gifs.map((gif, index) => {
@@ -38,6 +24,6 @@ export function SearchResult(props) {
       })}
     </SearchResultContainer>
   );
-}
+};
 
 export default SearchResult;
