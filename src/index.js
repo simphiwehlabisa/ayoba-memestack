@@ -5,6 +5,8 @@ import { render } from "react-dom";
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import SearchResult from "./SearchResult";
+import "./global.css";
+import "typeface-roboto";
 
 class App extends Component {
   constructor() {
