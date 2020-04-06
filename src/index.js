@@ -2,7 +2,6 @@
 
 import React, { Component } from "react";
 import { render } from "react-dom";
-import "./style.css";
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import SearchResult from "./SearchResult";
