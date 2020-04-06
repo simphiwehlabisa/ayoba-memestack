@@ -24,8 +24,8 @@ git clone https://github.com/simphiwehlabisa/ayoba-memestack.git
 cd ayoba-memestack
 
 # Install NPM dependencies
-yarn install (if using node. npm install)
+npm install
 
 # Then simply start memestack app
-yarn run start (if using node. npm run start)
+npm run start
 ```
