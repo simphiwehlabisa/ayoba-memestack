@@ -11,7 +11,6 @@
 
 - Search Memes
 - Send Meme As An Image
-- Node.js clusters support
 
 ## Getting Started
 
