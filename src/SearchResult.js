@@ -2,14 +2,32 @@ import React from "react";
 import styled from "styled-components";
 
 const SearchResultContainer = styled.div`
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
+
+  z-index: 0;
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 `;
 
 const MemeImageContainer = styled.div`
-  width: 30vw;
+  margin: 30px auto;
+  width: 30%;
+  border-radius: 40px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+`;
+
+const MemeImage = styled.img`
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  height: 300px;
 `;
 
 const SearchResult = (props) => {
@@ -18,7 +36,11 @@ const SearchResult = (props) => {
       {props.gifs.map((gif, index) => {
         return (
           <MemeImageContainer key={index}>
-            <img key={index} src={gif.images.fixed_height.url} alt={index} />
+            <MemeImage
+              key={index}
+              src={gif.images.fixed_height.url}
+              alt={index}
+            ></MemeImage>
           </MemeImageContainer>
         );
       })}

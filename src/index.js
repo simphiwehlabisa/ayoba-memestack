@@ -16,7 +16,7 @@ class App extends Component {
     };
   }
 
-  xmlhr = (query) => {
+  search = (query) => {
     axios
       .get(
         `https://api.giphy.com/v1/gifs/search?q=${query}&limit=24&api_key=dc6zaTOxFJmzC`
@@ -25,7 +25,6 @@ class App extends Component {
         this.setState({
           gifs: response.data.data,
         });
-
         console.log(this.state.gifs);
       })
       .catch((error) => {
@@ -35,11 +34,9 @@ class App extends Component {
 
   searchGif = (event, query) => {
     query = event.target.value;
-
     if (event.key === "Enter") {
       event.preventDefault();
-
-      this.xmlhr(query);
+      this.search(query);
     }
   };
 
