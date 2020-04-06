@@ -7,7 +7,7 @@ import axios from "axios";
 import SearchResult from "./SearchResult";
 import "./global.css";
 import "typeface-roboto";
-import Ayoba from "./microapp.js";
+// import Ayoba from "./microapp.js";
 
 class App extends Component {
   constructor() {
