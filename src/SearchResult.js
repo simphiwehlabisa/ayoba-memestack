@@ -16,7 +16,7 @@ const SearchResultContainer = styled.div`
 
 const MemeImageContainer = styled.div`
   margin: 30px auto;
-  width: 30%;
+  width: 300px;
   border-radius: 40px;
   cursor: pointer;
   -webkit-transition: 0.4s;

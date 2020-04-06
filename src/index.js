@@ -40,6 +40,10 @@ class App extends Component {
     }
   };
 
+  componentDidMount() {
+    this.search("trending");
+  }
+
   render() {
     return (
       <div>
