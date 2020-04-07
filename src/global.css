@@ -15,3 +15,23 @@ body {
   margin: 0;
   font-family: "roboto";
 }
+.center {
+  margin: auto;
+  width: 50%;
+  max-width: 400px;
+  min-width: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+div.loader {
+  font-size: 100px;
+}
+
+.loaded {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
