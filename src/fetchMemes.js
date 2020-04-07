@@ -4,20 +4,19 @@ import {
   fetchMemesError,
 } from "./action";
 
-function fetchMemes() {
+import axios from "axios";
+
+function fetchMemes(query) {
   return (dispatch) => {
     dispatch(fetchMemesPending());
-    fetch(
-      "`https://api.giphy.com/v1/gifs/search?q=trending&limit=24&api_key=dc6zaTOxFJmzC"
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.error) {
-          throw res.error;
-        }
-        console.log(res);
-        dispatch(fetchMemesSuccess(res.data));
-        return res.memes;
+    axios
+      .get(
+        `https://api.giphy.com/v1/gifs/search?q=${query}&limit=24&api_key=dc6zaTOxFJmzC`
+      )
+      .then((response) => {
+        console.log(response);
+        dispatch(fetchMemesSuccess(response.data.data));
+        return response.data.data;
       })
       .catch((error) => {
         dispatch(fetchMemesError(error));

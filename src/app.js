@@ -14,22 +14,9 @@ import Loading from "./loading";
 class App extends Component {
   constructor() {
     super();
-    this.shouldComponentRender = this.shouldComponentRender.bind(this);
     this.state = {
       memes: [],
     };
-  }
-
-  componentWillMount() {
-    const { fetchMemes } = this.props;
-    fetchMemes();
-  }
-
-  shouldComponentRender() {
-    const { pending } = this.props;
-    if (pending === false) return false;
-
-    return true;
   }
 
   search = (query) => {
@@ -63,13 +50,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.search("trending");
+    const { fetchMemes } = this.props;
+    fetchMemes("trending");
   }
 
   render() {
     const { memes, error, pending } = this.props;
 
-    if (!this.shouldComponentRender()) return <Loading />;
+    if (pending) return <Loading />;
 
     return (
       <React.Fragment>
@@ -77,10 +65,7 @@ class App extends Component {
           {error && <span className="app-error">{error}</span>}
         </div>
         <SearchBar searchMeme={this.searchMeme}></SearchBar>
-        <SearchResult
-          memes={this.state.memes}
-          sendMeme={this.sendMeme}
-        ></SearchResult>
+        <SearchResult memes={memes} sendMeme={this.sendMeme}></SearchResult>
       </React.Fragment>
     );
   }
